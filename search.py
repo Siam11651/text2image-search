@@ -1,3 +1,5 @@
+# pylint: disable=C0103
+
 import os
 import torch
 from transformers import CLIPProcessor, CLIPModel

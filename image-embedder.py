@@ -1,3 +1,5 @@
+# pylint: disable=C0103
+
 import os
 import torch
 from transformers import CLIPProcessor, CLIPModel
@@ -42,7 +44,7 @@ for index, file in enumerate(os.listdir(DIRECTORY)):
         )
         db_conn.commit()
         print(f"{index + 1} images complete")
-    except Exception as e:
+    except Exception as e:  # pylint: disable=W0718
         db_conn.rollback()
         print(f"An error occurred: {e}")
     finally:
